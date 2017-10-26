@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Here is the list of items.</p>
+
+<table class="table table-inverse">
+    <tr>
+        <th>Name </th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+
+    </tr>
+
+
+
+    @foreach (var element in ViewBag.Clist)
+    {
+        <tr>
+
+            <td>@element.Name</td>
+            <td>@element.Description</td>
+            <td>@element.Quantity</td>
+            <td>@element.Price</td>
+            <td><a href="/Home/DeleteProducts?ProductID=@element.Name" onclick="return confirm ('Are you sure?')">Delete</a></td>
+
+
+        </tr>
+
+
+
+
+    }
+</table>
+
+<a href="/Home/AddingNewItem">Add a new Item </a>

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "AddingNewItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Laboo23.Models.Item
+
+<h2>AddingNewItem</h2>
+
+
+<form action="/Home/NewItem " method="post">
+    Name: <input type="text" name="Name" /><br />
+    Description: <input type="text" name="Description" /><br />
+    Quantity: <input type="text" name="Quantity" /><br />
+    Price: <input type="text" name="Price" /><br />
+    <input type="submit" value="Save" />
+
+
+</form>
