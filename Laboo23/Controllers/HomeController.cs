@@ -44,5 +44,18 @@ namespace Laboo23.Controllers
         {
             return View();
         }
+
+        public ActionResult DeleteItem(string itemID)
+        {
+            GroceriesEntities GroceriesDB = new GroceriesEntities();
+            Item e = GroceriesDB.Items.Find(itemID);
+
+            GroceriesDB.Items.Remove(e);
+            GroceriesDB.SaveChanges();
+
+            return RedirectToAction("About"); 
+
+
+        }
     }
-}
+} 
